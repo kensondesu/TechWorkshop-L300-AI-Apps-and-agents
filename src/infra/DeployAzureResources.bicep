@@ -1,5 +1,6 @@
 @description('Object ID of the user/principal to grant Cosmos DB data access')
-param userPrincipalId string
+// Get your principal object ID via: az ad signed-in-user show --query id -o tsv
+param userPrincipalId string = deployer().objectId
 
 @minLength(1)
 @description('Primary location for all resources.')
